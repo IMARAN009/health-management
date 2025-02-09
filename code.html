@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Management System</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+</head>
+<body class="bg-gray-100">
+    <!-- Navigation -->
+    <nav class="bg-blue-600 text-white shadow-lg">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold">HealthCare HMS</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="hover:text-blue-200">Dashboard</a>
+                    <a href="#" class="hover:text-blue-200">Patients</a>
+                    <a href="#" class="hover:text-blue-200">Appointments</a>
+                    <a href="#" class="hover:text-blue-200">Doctors</a>
+                    <a href="#" class="hover:text-blue-200">Reports</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span class="hidden md:inline">Dr. John Doe</span>
+                    <img src="/api/placeholder/40/40" alt="Profile" class="w-8 h-8 rounded-full"/>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-6 py-8">
+        <!-- Dashboard Stats -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+            <div class="bg-white rounded-lg shadow p-6">
+                <div class="flex items-center">
+                    <div class="p-3 rounded-full bg-blue-100 text-blue-600">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-gray-500">Total Patients</p>
+                        <p class="text-2xl font-semibold">1,482</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg shadow p-6">
+                <div class="flex items-center">
+                    <div class="p-3 rounded-full bg-green-100 text-green-600">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-gray-500">Appointments</p>
+                        <p class="text-2xl font-semibold">48</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg shadow p-6">
+                <div class="flex items-center">
+                    <div class="p-3 rounded-full bg-red-100 text-red-600">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-gray-500">Emergency</p>
+                        <p class="text-2xl font-semibold">12</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg shadow p-6">
+                <div class="flex items-center">
+                    <div class="p-3 rounded-full bg-yellow-100 text-yellow-600">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-gray-500">Operations</p>
+                        <p class="text-2xl font-semibold">8</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Patients & Appointments -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Recent Patients -->
+            <div class="bg-white rounded-lg shadow">
+                <div class="px-6 py-4 border-b">
+                    <h2 class="text-lg font-semibold">Recent Patients</h2>
+                </div>
+                <div class="p-6">
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead>
+                                <tr class="text-left bg-gray-50">
+                                    <th class="px-4 py-2">Name</th>
+                                    <th class="px-4 py-2">Age</th>
+                                    <th class="px-4 py-2">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-t">
+                                    <td class="px-4 py-2">Sarah Johnson</td>
+                                    <td class="px-4 py-2">45</td>
+                                    <td class="px-4 py-2"><span class="px-2 py-1 text-xs rounded-full bg-green-100 text-green-800">Active</span></td>
+                                </tr>
+                                <tr class="border-t">
+                                    <td class="px-4 py-2">Michael Brown</td>
+                                    <td class="px-4 py-2">32</td>
+                                    <td class="px-4 py-2"><span class="px-2 py-1 text-xs rounded-full bg-yellow-100 text-yellow-800">Pending</span></td>
+                                </tr>
+                                <tr class="border-t">
+                                    <td class="px-4 py-2">Emily Davis</td>
+                                    <td class="px-4 py-2">28</td>
+                                    <td class="px-4 py-2"><span class="px-2 py-1 text-xs rounded-full bg-blue-100 text-blue-800">New</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Upcoming Appointments -->
+            <div class="bg-white rounded-lg shadow">
+                <div class="px-6 py-4 border-b">
+                    <h2 class="text-lg font-semibold">Upcoming Appointments</h2>
+                </div>
+                <div class="p-6">
+                    <div class="space-y-4">
+                        <div class="flex items-center p-4 bg-gray-50 rounded">
+                            <img src="/api/placeholder/40/40" alt="Patient" class="w-10 h-10 rounded-full"/>
+                            <div class="ml-4">
+                                <p class="font-semibold">Robert Wilson</p>
+                                <p class="text-sm text-gray-500">Today - 10:00 AM</p>
+                            </div>
+                            <div class="ml-auto">
+                                <span class="px-3 py-1 text-sm rounded-full bg-blue-100 text-blue-800">Check-up</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-4 bg-gray-50 rounded">
+                            <img src="/api/placeholder/40/40" alt="Patient" class="w-10 h-10 rounded-full"/>
+                            <div class="ml-4">
+                                <p class="font-semibold">Lisa Anderson</p>
+                                <p class="text-sm text-gray-500">Today - 11:30 AM</p>
+                            </div>
+                            <div class="ml-auto">
+                                <span class="px-3 py-1 text-sm rounded-full bg-green-100 text-green-800">Follow-up</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-4 bg-gray-50 rounded">
+                            <img src="/api/placeholder/40/40" alt="Patient" class="w-10 h-10 rounded-full"/>
+                            <div class="ml-4">
+                                <p class="font-semibold">James Martin</p>
+                                <p class="text-sm text-gray-500">Today - 2:00 PM</p>
+                            </div>
+                            <div class="ml-auto">
+                                <span class="px-3 py-1 text-sm rounded-full bg-red-100 text-red-800">Surgery</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
